@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PaperTypes extends Controller
+class PaperTypesController extends Controller
 {
     /**
      * Display a listing of the resource.

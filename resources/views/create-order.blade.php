@@ -3,7 +3,7 @@
 
 <title>Create Order</title>
 
-@section('mainPane')    
+@section('mainPane')
 		<!-- ORDER FORM -->
 		<div class="content">
 			<div class="container-fluid">
@@ -28,7 +28,7 @@
 										</div>
 									</div>
 							</div>
-													
+
 							<div class="header">
 								<h4 class="title">Specifications</h4>
 							</div>
@@ -62,23 +62,23 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<label><b>Stocks</b></label>
 										<div class="row">
 										<div class="col-md-4">
 										  <div class="form-group">
 										  {{ Form::label('cover_color', 'Cover: ') }}
-										  {{ Form::select('cover_color',  
+										  {{ Form::select('cover_color',
 										  ['Colored' => 'Colored',
 										  'Grayscale' => 'Grayscale'], 'Colored', ['class' => 'form-control border-input'])}}
 										<br><br>
 										  </div>
 									  </div>
-									  
+
 									  <div class="col-md-4">
 										  <div class="form-group">
 										  {{ Form::label('inside_color', 'Inside: ') }}
-										  {{ Form::select('inside_color',  
+										  {{ Form::select('inside_color',
 										  ['Colored' => 'Colored',
 										  'Grayscale' => 'Grayscale'], 'Colored', ['class' => 'form-control border-input'])}}
 										<br><br>
@@ -94,7 +94,7 @@
 										  </div>
 									  </div>
 								  </div>
-								  
+
 								  <div class="row">
 									  <div class="col-lg-6">
 										  <div class="form-group">
@@ -103,7 +103,7 @@
 										  </div>
 									  </div>
 								  </div>
-								  
+
 								  <div class="row">
 									  <div class="col-lg-6">
 										  <div class="form-group">
@@ -113,6 +113,9 @@
 									  </div>
 								  </div>
 
+
+
+
 								  <div class="row">
 									  <div class="col-md-6">
 										  <div class="form-group">
@@ -121,7 +124,7 @@
 										  </div>
 									  </div>
 								  </div>
-								  
+
 								  <div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">

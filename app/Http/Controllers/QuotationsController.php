@@ -12,6 +12,7 @@ use App\LaminationTypes;
 use App\BindingTypes;
 use App\DiecuttingTypes;
 
+
 class QuotationsController extends Controller
 {
     /**
@@ -21,7 +22,8 @@ class QuotationsController extends Controller
      */
     public function index()
     {
-
+      $quotations = Quotations::all();
+      return view('confirm-quotation');
     }
 
     /**

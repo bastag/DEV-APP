@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Invoice;
 use Illuminate\Http\Request;
 
-class Invoices extends Controller
+class InvoicesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class Invoices extends Controller
      */
     public function index()
     {
-        //
+        return view('invoice-list');
     }
 
     /**
@@ -43,9 +44,10 @@ class Invoices extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        // $invoice= Invoice::find($id);
+        return view('view-invoice');
     }
 
     /**

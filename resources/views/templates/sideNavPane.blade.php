@@ -41,8 +41,8 @@
                     </a>
                 </li>
 
-                <li class = "{{Request:: is('view-invoice') ? 'active' : ''}}">
-                    <a href="/view-invoice">
+                <li class = "{{Request:: is('invoice-list') ? 'active' : ''}}">
+                    <a href="/invoice-list">
                         <i class="ti-receipt"></i>
                         <p>View Invoice</p>
                     </a>
@@ -57,8 +57,8 @@
 
                 <li align = 'center'><strong> Sales Agent </strong></li>
 
-                <li class = "{{Request:: is('manage-order') ? 'active' : ''}}">
-                    <a href="/manage-order">
+                <li class = "{{Request:: is('order-lists') ? 'active' : ''}}">
+                    <a href="/order-lists">
                         <i class="ti-shopping-cart"></i>
                         <p>Manage Orders</p>
                     </a>
@@ -72,8 +72,8 @@
                     </a>
                 </li>
 
-                <li class = "{{Request:: is('orderDetails.html') ? 'active' : ''}}">
-                    <a href="orderDetails.html">
+                <li class = "{{Request:: is('transactional-logs') ? 'active' : ''}}">
+                    <a href="/transactional-logs">
                         <i class="ti-time"></i>
                         <p>Transactional Logs</p>
                     </a>

@@ -77,6 +77,33 @@
 								</tr>
 								
 								<tr>
+								<td>Typesetting</td>
+                                <td></td>
+								<td></td>
+								</tr>
+								
+								<tr>
+								<td>{{ Form::label('layout_price', 'Layout/Design') }}</td>
+								<td> -- </td>
+								<td width="25%">{{ Form::text('layout_price', '', ['class' => 'form-control border-input', 'placeholder' => 'How much?'])}}
+								</td>
+								</tr>
+								
+								<tr>
+								<td>{{ Form::label('colsep_price', 'Color Separation') }}</td>
+								<td> -- </td>
+								<td width="25%">{{ Form::text('colsep_price', '', ['class' => 'form-control border-input', 'placeholder' => 'How much?'])}}
+								</td>
+								</tr>
+								
+								<tr>
+								<td>{{ Form::label('digineg_price', 'Digital Negative Output') }}</td>
+								<td> -- </td>
+								<td width="25%">{{ Form::text('digineg_price', '', ['class' => 'form-control border-input', 'placeholder' => 'How much?'])}}
+								</td>
+								</tr>
+								
+								<tr>
 								<td>Offset Running</td>
                                 <td></td>
 								<td></td>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LaminationTypes extends Controller
+class LaminationTypesController extends Controller
 {
     /**
      * Display a listing of the resource.

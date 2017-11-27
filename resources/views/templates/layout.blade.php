@@ -100,7 +100,7 @@
 <body>
 
 <div class="wrapper">
-	@if(Request::is(@guest))
+	@if(!(Request::is(@guest)))
         @include('templates.sideNavPane')
 		<!-- MAIN NAVBAR -->
 

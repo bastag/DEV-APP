@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Customers;
 use Illuminate\Http\Request;
 
-class Customers extends Controller
+class CustomersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class Customers extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

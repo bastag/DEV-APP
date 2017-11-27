@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OffsetTypes extends Controller
+class OffsetTypesController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Orders;
 use Illuminate\Http\Request;
 
-class Orders extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class Orders extends Controller
      */
     public function index()
     {
-        //
+      return view('order-lists');
     }
 
     /**
@@ -23,7 +25,7 @@ class Orders extends Controller
      */
     public function create()
     {
-        //
+        return view('create-order');
     }
 
     /**
@@ -43,9 +45,9 @@ class Orders extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('manage-order');
     }
 
     /**
@@ -56,7 +58,7 @@ class Orders extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('manage-order/edit');
     }
 
     /**

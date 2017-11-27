@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BindingTypes extends Controller
+class BindingTypesController extends Controller
 {
     /**
      * Display a listing of the resource.
