@@ -81,3 +81,6 @@ Route::resource('DiecuttingType', 'DiecuttingTypes');
 Auth::routes();
 Route::get('/', 'DashboardController@index')->name('Dashboard');
 ?>
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
