@@ -29,10 +29,10 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     <?php echo e(Auth::user()->first_name); ?> <?php echo e(Auth::user()->last_name); ?> <span class="caret"></span>
                                 </a>
-
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu" role = 'menu'>
+                                    <li><a href = 'profile'> Profile </a> </li>
                                     <li>
-                                        <a href="<?php echo e(route('logout')); ?>"
+                                      <a href="<?php echo e(route('logout')); ?>"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout

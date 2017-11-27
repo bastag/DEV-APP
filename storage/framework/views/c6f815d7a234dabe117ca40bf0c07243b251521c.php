@@ -1,6 +1,6 @@
 <title>Create Order</title>
 
-<?php $__env->startSection('mainPane'); ?>    
+<?php $__env->startSection('mainPane'); ?>
 		<!-- ORDER FORM -->
 		<div class="content">
 			<div class="container-fluid">
@@ -30,7 +30,7 @@
 										</div>
 									</div>
 							</div>
-													
+
 							<div class="header">
 								<h4 class="title">Specifications</h4>
 							</div>
@@ -68,26 +68,26 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<label><b>Stocks</b></label>
 										<div class="row">
 										<div class="col-md-4">
 										  <div class="form-group">
 										  <?php echo e(Form::label('cover_color', 'Cover: ')); ?>
 
-										  <?php echo e(Form::select('cover_color',  
+										  <?php echo e(Form::select('cover_color',
 										  ['Colored' => 'Colored',
 										  'Grayscale' => 'Grayscale'], 'Colored', ['class' => 'form-control border-input'])); ?>
 
 										<br><br>
 										  </div>
 									  </div>
-									  
+
 									  <div class="col-md-4">
 										  <div class="form-group">
 										  <?php echo e(Form::label('inside_color', 'Inside: ')); ?>
 
-										  <?php echo e(Form::select('inside_color',  
+										  <?php echo e(Form::select('inside_color',
 										  ['Colored' => 'Colored',
 										  'Grayscale' => 'Grayscale'], 'Colored', ['class' => 'form-control border-input'])); ?>
 
@@ -106,7 +106,7 @@
 										  </div>
 									  </div>
 								  </div>
-								  
+
 								  <div class="row">
 									  <div class="col-lg-6">
 										  <div class="form-group">
@@ -117,7 +117,7 @@
 										  </div>
 									  </div>
 								  </div>
-								  
+
 								  <div class="row">
 									  <div class="col-lg-6">
 										  <div class="form-group">
@@ -129,6 +129,9 @@
 									  </div>
 								  </div>
 
+
+
+
 								  <div class="row">
 									  <div class="col-md-6">
 										  <div class="form-group">
@@ -139,7 +142,7 @@
 										  </div>
 									  </div>
 								  </div>
-								  
+
 								  <div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -182,4 +185,5 @@
 			</div>
 		</div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('templates.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
