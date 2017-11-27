@@ -47,21 +47,21 @@
 								<th width="25%">Specification</th>
                                 <th width="25%">Price</th>
 								</thead>
-								
+
 								<tbody>
-								
+
 								<tr>
 								<td><b><?php echo e(Form::label('quantity', 'Quantity')); ?><b></td>
 								<td>50</td>
 								<td></td>
 								</tr>
-								
+
 								<tr>
 								<td>Stocks:</td>
 								<td></td>
 								<td></td>
 								</tr>
-								
+
 								<tr>
 								<td style="text-indent:30pt"><?php echo e(Form::label('cover_stock_price', 'Cover')); ?></td>
 								<td> -- </td>
@@ -69,7 +69,7 @@
 
 								</td>
                                 </tr>
-								
+
 								<tr>
 								<td style="text-indent:30pt"><?php echo e(Form::label('inside_stock_price', 'Inside')); ?></td>
 								<td>--</td>
@@ -77,43 +77,13 @@
 
 								</td>
 								</tr>
-								
-								<tr>
-								<td>Typesetting</td>
-                                <td></td>
-								<td></td>
-								</tr>
-								
-								<tr>
-								<td><?php echo e(Form::label('layout_price', 'Layout/Design')); ?></td>
-								<td> -- </td>
-								<td width="25%"><?php echo e(Form::text('layout_price', '', ['class' => 'form-control border-input', 'placeholder' => 'How much?'])); ?>
 
-								</td>
-								</tr>
-								
-								<tr>
-								<td><?php echo e(Form::label('colsep_price', 'Color Separation')); ?></td>
-								<td> -- </td>
-								<td width="25%"><?php echo e(Form::text('colsep_price', '', ['class' => 'form-control border-input', 'placeholder' => 'How much?'])); ?>
-
-								</td>
-								</tr>
-								
-								<tr>
-								<td><?php echo e(Form::label('digineg_price', 'Digital Negative Output')); ?></td>
-								<td> -- </td>
-								<td width="25%"><?php echo e(Form::text('digineg_price', '', ['class' => 'form-control border-input', 'placeholder' => 'How much?'])); ?>
-
-								</td>
-								</tr>
-								
 								<tr>
 								<td>Offset Running</td>
                                 <td></td>
 								<td></td>
 								</tr>
-								
+
 								<tr>
 								<td style="text-indent:30pt"><?php echo e(Form::label('cover_offset_price', 'Cover')); ?></td>
                                 <td> -- </td>
@@ -121,7 +91,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td style="text-indent:30pt"><?php echo e(Form::label('inside_offset_price', 'Inside')); ?></td>
                                 <td> -- </td>
@@ -129,7 +99,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td style="text-indent:30pt"><?php echo e(Form::label('other_offset_price', 'Others')); ?></td>
                                 <td> -- </td>
@@ -137,7 +107,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td><?php echo e(Form::label('lamination_price', 'Lamination')); ?></td>
 								<td> -- </td>
@@ -153,7 +123,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td><?php echo e(Form::label('binding_price', 'Binding')); ?></td>
                                 <td> -- </td>
@@ -161,7 +131,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td><?php echo e(Form::label('diecut_price', 'Die Cutting/Blades/Cliche')); ?></td>
 								<td> -- </td>
@@ -169,7 +139,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td><?php echo e(Form::label('diecut_run_price', 'Diecutting Running')); ?></td>
 								<td> -- </td>
@@ -177,7 +147,7 @@
 
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td><?php echo e(Form::label('other_price', 'Others')); ?></td>
 								<td> -- </td>
@@ -185,10 +155,10 @@
 
 								</td>
 								</tr>
-								
+
 								<tr></tr>
 								<tr></tr>
-								
+
 								<tr>
 								<td>Total:</td>
 								<td></td>
@@ -200,12 +170,13 @@
 								<td></td>
 								<td>PhP -.--</td>
 								</tr>
-								</tbody>	
+								</tbody>
                             </table>
 							<div>
 								<?php echo e(Form::submit('Compute', ['class' => 'btn btn-warning btn-fill btn-wd'])); ?></td>
 								</div>
-							<?php echo Form::close(); ?>	
+							<?php echo Form::close(); ?>
+
 								<div>
 									<?php echo e(Form::submit('Post', ['class' => 'btn btn-success btn-fill btn-wd'])); ?>
 

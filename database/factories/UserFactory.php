@@ -29,14 +29,16 @@ $factory->define(App\Orders::class, function (Faker $faker) {
     static $password;
 
     return [
-        'id' => $faker->name,
-        'customer_id' => $faker->name,
-        'sales_agent_id' => $faker->name,
-        'quantity' => $faker->text,
-        'size_type_id' => $faker->paragraph,
-        'page_count' => $faker->text,
-        'binding_type_id' => $faker->text,
-        'paper_type_id' => $faker->paragraph
+        'id' => $faker->ean8,
+        'customer_id' => function(){
+          return factory(App\User::class)->create()->id;
+        },
+        'sales_agent_id' => $faker->ean8,
+        'quantity' => $faker->ean8,
+        'size_type_id' => $faker->ean8,
+        'page_count' => $faker->ean8,
+        'binding_type_id' => $faker->ean8,
+        'paper_type_id' => $faker->ean8
     ];
 });
 
@@ -45,7 +47,7 @@ $factory->define(App\User::class, function (Faker $faker) {
     static $password;
 
     return [
-        'id' => 2,
+        'id' => $faker->ean8,
         'first_name' => $faker->name,
         'last_name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -58,7 +60,7 @@ $factory->define(App\Quotations::class, function (Faker $faker) {
     static $password;
 
     return [
-        'id' => 1,
+        'id' => $faker->ean8,
         'order_id' => $faker->ean8,
         'amount_quoted' => $faker->ean8,
         'date_submitted' => $faker->date($format = 'Y-m-d', $max = 'now'),
@@ -70,5 +72,18 @@ $factory->define(App\Quotations::class, function (Faker $faker) {
         'lamination_type_id' => $faker->ean8,
         'binding_type_id' => $faker->ean8,
         'diecutting_type_id' => $faker->ean8
+    ];
+});
+
+$factory->define(App\Invoices::class, function (Faker $faker) {
+    static $password;
+
+    return [
+        'id' => $faker->ean8,
+        'order_id' => $faker->ean8,
+        'quotation_id' => $faker->ean8,
+        'amount_paid' => $faker->ean8,
+        'order_status' => $faker->text,
+        'payment_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
     ];
 });

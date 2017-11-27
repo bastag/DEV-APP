@@ -7,15 +7,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Scripts -->
+    <script src = "{{ asset('js/app.js') }}"></script>
+    <script src = "{{ asset('js/bootstrap.js') }}"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-
-    <!-- Ready-made -->
-    <script src = "{{ asset('js/app.js') }}"></script>
-    <script src = "{{ asset('js/bootstrap.js') }}"></script>
 
 
     <!-- Bootstrap core CSS     -->
@@ -94,6 +94,10 @@
 						    }
 						    $button.parent().find('.quantity').val(newVal);
 						    e.preventDefault();
+
+                $('#myModal').on('shown.bs.modal', function () {
+                  $('#myInput').trigger('focus')
+                })
 						});
 
 
@@ -104,13 +108,13 @@
 <body>
 
 <div class="wrapper">
-	@if(!(Request::is(@guest)))
+  @if(!(Request::is('login')) && !(Request::is('register')))
         @include('templates.sideNavPane')
 		<!-- MAIN NAVBAR -->
 
 
     <div class="main-panel">
-	@endif
+    @endif
 		<div id="app">
 			@include('templates.mainNavPane')
 			@include('templates.status')

@@ -7,6 +7,30 @@
 				<div class="row">
 					<div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
 						<div class="card">
+
+							<div>
+									<table  class="table table-hover" style="width:100%">
+									<col width="130">
+									<col width="80">
+										<thead>
+											<th width="25%">Order #</th>
+											<th width="25%">Date</th>
+											<th width="25%">Customer</th>
+										</thead>
+
+										<tbody>
+											<tr>
+											<td>3</td>
+											<td><?php echo e(Carbon\Carbon::now()); ?></td>
+											<td><a><?php echo e(Auth::user()->first_name); ?> <?php echo e(Auth::user()->last_name); ?></a></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<hr>
+								</div>
+
+
 							<div class="content">
 								<?php echo Form::open(['url' => 'create-order/submit']); ?>
 
@@ -69,11 +93,11 @@
 										</div>
 									</div>
 
-									<label><b>Stocks</b></label>
+									<label><b>Pages</b></label>
 										<div class="row">
 										<div class="col-md-4">
 										  <div class="form-group">
-										  <?php echo e(Form::label('cover_color', 'Cover: ')); ?>
+										  <?php echo e(Form::label('cover_color', 'Cover Color: ')); ?>
 
 										  <?php echo e(Form::select('cover_color',
 										  ['Colored' => 'Colored',
@@ -85,11 +109,33 @@
 
 									  <div class="col-md-4">
 										  <div class="form-group">
-										  <?php echo e(Form::label('inside_color', 'Inside: ')); ?>
+												<?php echo e(Form::label('inside_color', 'Inside Color: ')); ?>
 
-										  <?php echo e(Form::select('inside_color',
-										  ['Colored' => 'Colored',
-										  'Grayscale' => 'Grayscale'], 'Colored', ['class' => 'form-control border-input'])); ?>
+											  <?php echo e(Form::select('inside_color',
+											  ['Colored' => 'Colored',
+											  'Grayscale' => 'Grayscale'], 'Colored', ['class' => 'form-control border-input'])); ?>
+
+										<br><br>
+										  </div>
+									  </div>
+								  	</div>
+
+										<div class="row">
+										<div class="col-md-4">
+										  <div class="form-group">
+										  <?php echo e(Form::label('cover_paper', 'Cover Paper: ')); ?>
+
+										  <?php echo e(Form::text('cover_paper', '', ['class' => 'form-control border-input', 'placeholder' => 'Enter'])); ?>
+
+										<br><br>
+										  </div>
+									  </div>
+
+									  <div class="col-md-4">
+										  <div class="form-group">
+												<?php echo e(Form::label('inside_paper', 'Inside Paper: ')); ?>
+
+											  <?php echo e(Form::text('inside_paper', '', ['class' => 'form-control border-input', 'placeholder' => 'Enter'])); ?>
 
 										<br><br>
 										  </div>
@@ -117,20 +163,6 @@
 										  </div>
 									  </div>
 								  </div>
-
-								  <div class="row">
-									  <div class="col-lg-6">
-										  <div class="form-group">
-											  <?php echo e(Form::label('papertype', 'Paper Type')); ?>
-
-											 <?php echo e(Form::text('size', '', ['class' => 'form-control border-input', 'placeholder' => 'Enter'])); ?>
-
-										  </div>
-									  </div>
-								  </div>
-
-
-
 
 								  <div class="row">
 									  <div class="col-md-6">

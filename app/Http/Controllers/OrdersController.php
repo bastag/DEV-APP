@@ -4,14 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\Orders;
+use App\User;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +16,8 @@ class OrdersController extends Controller
      */
     public function index()
     {
-      return view('order-lists');
+      $orders = Orders::all();
+      return view('order-lists')->with('orders', $orders);
     }
 
     /**
@@ -29,7 +27,7 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('create-order');
+      return view('create-order');
     }
 
     /**
@@ -54,16 +52,6 @@ class OrdersController extends Controller
         return view('manage-order');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        return view('manage-order/edit');
-    }
 
     /**
      * Update the specified resource in storage.

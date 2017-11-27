@@ -28,27 +28,26 @@
                                                                              <th>Status</th>
 																		 </tr>
 																	 </thead>
+																	 <?php if($count=count($invoices)>1): ?>
+	 																	<?php $__currentLoopData = $invoices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $invoice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 																	 <tbody>
                                                                         <tr onclick="window.location='view-invoice';">
-																			 <td>1</td>
-                                                                             <td><?php echo e(\Carbon\Carbon::now()); ?></td>
-                                                                             <td>LCSC Flyers</td>
-                                                                             <td><a> Emman The Grate </a></td>
-                                                                             <td>PhP -- </td>
-                                                                             <td><?php echo e(\Carbon\Carbon::now()); ?></td>
-                                                                             <td><a>In process</a></td>
+																			 																			 <td><?php echo e($invoice->id); ?></td>
+																																						 <td><?php echo e($invoice->created_at); ?></td>
+                                                                             <td><?php echo e($invoice->order_id); ?></td>
+                                                                             <td><?php echo e($invoice->quotation_id); ?></td>
+                                                                             <td><?php echo e($invoice->amount_paid); ?></td>
+                                                                             <td><?php echo e($invoice->updated_at); ?></td>
+                                                                             <td><a><?php echo e($invoice->order_status); ?></a></td>
 																		 </tr>
-                                                                         <tr onclick="window.location='view-invoice';">
-																			 <td>2</td>
-                                                                             <td><?php echo e(\Carbon\Carbon::now()); ?></td>
-                                                                             <td>LCSC Flyers</td>
-                                                                             <td><a>Chacha Lucero</a></td>
-                                                                             <td>PhP -- </td>
-                                                                             <td><?php echo e(\Carbon\Carbon::now()); ?> </td>
-                                                                             <td><a>Ready For Delivery</a></td>
-																		 </tr>
+																		 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+																	 <?php else: ?>
+																	 <tr>
+																			 <td><h1>No Orders</h1></td>
+																	 </tr>
 
 																	 </tbody>
+																	 <?php endif; ?>
 																 </table>
 
 																 <div class="col-sm-12 ">

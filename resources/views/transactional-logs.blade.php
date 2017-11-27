@@ -9,12 +9,12 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Order History</h4>
+                                <h4 class="title">Transactional Logs </h4>
                             </div>
                             <!-- FORM CONTENT -->
 															<div class="container-fluid">
 
-																 <h1><i class="ti-receipt"></i> Quotes <small> (click on order for details)</small> </h1>
+																 <h1><i class="ti-receipt"></i> Transactions </h1>
 
 																 <hr>
 
@@ -24,10 +24,12 @@
 																			 <th>Order #</th>
                                                                              <th>Date</th>
                                                                              <th>Job Title</th>
+																																						 <th>Customer</th>
+																																						 @if( Auth::user()->user_type == 'Owner')
                                                                              <th>Agent</th>
+																																						 @endif
                                                                              <th>Job Price</th>
                                                                              <th>Price per Unit</th>
-                                                                             <th>Status</th>
 																		 </tr>
 																	 </thead>
 																	 <tbody>
@@ -35,46 +37,56 @@
 																			 <td>1</td>
                                                                              <td></td>
                                                                              <td>LCSC Flyers</td>
-                                                                             <td><a> -- </a></td>
+                                                                             <td><a>Crisostomo Ibarra</a></td>
+																																						 @if( Auth::user()->user_type == 'Owner')
+                                                                             <th> -- </th>
+																																						 @endif
                                                                              <td>PhP -- </td>
                                                                              <td>PhP -- </td>
-                                                                             <td><a>Waitlist</a></td>
-																		 </tr>
+                                                                             </tr>
+
                                                                          <tr>
 																			 <td>2</td>
                                                                              <td></td>
                                                                              <td>LCSC Flyers</td>
+																																						 <td><a>Crisostomo Ibarra</a></td>
+																																						 @if( Auth::user()->user_type == 'Owner')
                                                                              <td><a>Chacha Lucero</a></td>
+																																						 @endif
                                                                              <td>PhP -- </td>
                                                                              <td>PhP -- </td>
-                                                                             <td><a>Processing</a></td>
-																		 </tr>
-                                                                         <tr>
+                                                                             </tr>
+
+																																				 <tr>
 																			 <td>3</td>
                                                                              <td></td>
-                                                                             <td>LCSC Flyers</td>
+                                                                             <td>LCSC Flyers</td><td><a>Crisostomo Ibarra</a></td>
+																																						 @if( Auth::user()->user_type == 'Owner')
                                                                              <td><a>Chacha Lucero</a></td>
+																																						 @endif
                                                                              <td>PhP -- </td>
                                                                              <td>PhP -- </td>
-                                                                             <td><a>Check Quotation</a></td>
-																		 </tr>
+
                                                                          <tr>
+
 																			 <td>4</td>
                                                                              <td></td>
                                                                              <td>LCSC Flyers</td>
+																																						 <td><a>Crisostomo Ibarra</a></td>
+																																						 @if( Auth::user()->user_type == 'Owner')
                                                                              <td><a>Chacha Lucero</a></td>
+																																						 @endif
                                                                              <td>PhP 10000.00</td>
-                                                                             <td>PhP 50.00</td>
-                                                                             <td><a>Check Invoice</a></td>
-																		 </tr>
+                                                                             <td>PhP 50.00</td></tr>
                                                                          <tr>
 																			 <td>5</td>
                                                                              <td></td>
                                                                              <td>LCSC Flyers</td>
-                                                                             <td><a>Chacha Lucero</a></td>
-                                                                             <td>PhP 10000.00</td>
+																																						 <td><a>Crisostomo Ibarra</a></td> @if( Auth::user()->user_type == 'Owner')
+                                                                              <td><a>Chacha Lucero</a></td>
+ 																																						 @endif
+																																						 <td>PhP 10000.00</td>
                                                                              <td>PhP 50.00</td>
-                                                                             <td><a>Delivered</a></td>
 																		 </tr>
 																	 </tbody>
 																 </table>

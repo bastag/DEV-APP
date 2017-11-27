@@ -42,7 +42,7 @@
 
                         <div class="form-group">
                             <label for="user_type" class="col-md-4 control-label border-input">User Type</label>
-                                
+
                                 <div class="col-md-4">
                                     <select name="user_type" class = 'form-control border-input' type = 'dropdown'>
                                         <option value = 'Customer'> Customer </option>

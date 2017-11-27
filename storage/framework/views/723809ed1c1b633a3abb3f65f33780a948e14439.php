@@ -12,9 +12,9 @@
                             <!-- FORM CONTENT -->
 							<div class="container-fluid">
 								<h1><i class="ti-receipt"></i> Quotes <small> (click on order for details)</small> </h1>
-								
+
 								<hr>
-								
+
 								<table class="table table-hover">
 								<thead>
 								<tr>
@@ -22,10 +22,11 @@
 								<th>Job Title</th>
 								<th>Agent</th>
 								<th>Job Price</th>
+								<th>Quantity</th>
 								<th>Price per Unit</th>
 								<th>Confirm</th>
 								</tr>
-								
+
 								</thead>
 								<tbody>
 								<tr>
@@ -33,40 +34,40 @@
 								<td>La Salle Yearbook</td>
 								<td><a>Nidora Zobeyala</a></td>
 								<td>PhP 40000.00</td>
+								<td>100</td>
 								<td>PhP 100.00</td>
 								<td></td>
 								</tr>
-								
+
 								<tr>
 								<td>2</td>
 								<td>Ateneo Yearbook</td>
 								<td><a>Divina Ursula</a></td>
 								<td>PhP 300000.00</td>
+								<td>10</td>
 								<td>PhP 3000.00</td>
 								<td>
 									<btn class = 'btn btn-primary'><i class="ti-check"></i></btn> </li>
 									<btn class = 'btn btn-danger'><i class= "ti-close"></i></btn> </li>
 								</td>
 								</tr>
-								
+
 								<tr>
 								<td>3</td>
 								<td>LCSC Flyers</td>
 								<td><a>Chacha Lucero</a></td>
 								<td>PhP 10000.00</td>
+								<td>100</td>
 								<td>PhP 50.00</td>
 								<td>
-									<div class = 'form-group'>
 										<btn class = 'btn btn-primary'><i class="ti-check"></i></btn>
-									<div class = 'form-group'>
 										<btn class = 'btn btn-danger'><i class= "ti-close"></i></btn>
-									</div>
 								</td>
 								</tr>
-								
+
 								</tbody>
 								</table>
-								
+
 								<div class="col-sm-12 ">
 									<div class="result pull-left"><strong>Showing 1 to 2 of max</strong></div>
 										<ul class="pagination pull-right">
@@ -86,4 +87,5 @@
             </div>
         </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('templates.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

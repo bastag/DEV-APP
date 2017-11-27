@@ -1,6 +1,4 @@
-
 <div class="sidebar" data-background-color="black" data-active-color="danger">
-
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
 		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
@@ -15,8 +13,6 @@
                 </a>
             </div>
 
-
-            @if(!(Request::is('login')) && !(Request::is('register')))
             <ul class="nav">
                 <li class = "{{Request:: is('/') ? 'active' : ''}}">
                     <a href="/">
@@ -24,6 +20,8 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+
+              @if(Auth::user()->user_type == 'Customer')
 
                 <li align = 'center'><strong> Customer </strong></li>
 
@@ -55,6 +53,8 @@
                     </a>
                 </li>
 
+                @elseif(Auth::user()->user_type == 'Sales Agent')
+
                 <li align = 'center'><strong> Sales Agent </strong></li>
 
                 <li class = "{{Request:: is('order-lists') ? 'active' : ''}}">
@@ -79,6 +79,8 @@
                     </a>
                 </li>
 
+                @elseif(Auth::user()->user_type == 'Owner')
+
                 <li align = 'center'><strong> Owner </strong></li>
 
                 <li class = "{{Request:: is('manage-quotation') ? 'active' : ''}}">
@@ -88,8 +90,8 @@
                     </a>
                 </li>
 
-                <li class = "{{Request:: is('orderDetails.html') ? 'active' : ''}}">
-                    <a href="orderDetails.html">
+                <li class = "{{Request:: is('transactional-logs') ? 'active' : ''}}">
+                    <a href="/transactional-logs">
                         <i class="ti-time"></i>
                         <p>Transactional Logs</p>
                     </a>
@@ -103,28 +105,5 @@
                 </li>
             </ul>
             @endif
-
-            @if(Request::is('login') || Request::is('register'))
-            <ul class="nav">
-                <li class = "{{Request:: is('login') ? 'active' : ''}}">
-                    <a href="login">
-                        <i class="ti-user"></i>
-                        <p>Log-in</p>
-                    </a>
-                </li>
-
-
-                <li class = "{{Request:: is('register') ? 'active' : ''}}">
-                    <a href="register">
-                        <i class="ti-file"></i>
-                        <p>Create Account</p>
-                    </a>
-                </li>
-            </ul>
-        @endif
-
-
-
-
     	</div>
     </div>

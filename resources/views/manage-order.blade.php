@@ -21,6 +21,7 @@
 											</div>
 										</div>
 
+										
 										<div class="col-lg-6">
 											<div class="form-group">
 												{{ Form::label('jobtype', 'Job Type') }}

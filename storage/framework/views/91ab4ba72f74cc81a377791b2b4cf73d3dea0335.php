@@ -7,15 +7,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
+    <!-- Scripts -->
+    <script src = "<?php echo e(asset('js/app.js')); ?>"></script>
+    <script src = "<?php echo e(asset('js/bootstrap.js')); ?>"></script>
+
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-
-    <!-- Ready-made -->
-    <script src = "<?php echo e(asset('js/app.js')); ?>"></script>
-    <script src = "<?php echo e(asset('js/bootstrap.js')); ?>"></script>
 
 
     <!-- Bootstrap core CSS     -->
@@ -94,6 +94,10 @@
 						    }
 						    $button.parent().find('.quantity').val(newVal);
 						    e.preventDefault();
+
+                $('#myModal').on('shown.bs.modal', function () {
+                  $('#myInput').trigger('focus')
+                })
 						});
 
 
@@ -104,13 +108,13 @@
 <body>
 
 <div class="wrapper">
-	<?php if(!(Request::is(@guest))): ?>
+  <?php if(!(Request::is('login')) && !(Request::is('register'))): ?>
         <?php echo $__env->make('templates.sideNavPane', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		<!-- MAIN NAVBAR -->
 
 
     <div class="main-panel">
-	<?php endif; ?>
+    <?php endif; ?>
 		<div id="app">
 			<?php echo $__env->make('templates.mainNavPane', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 			<?php echo $__env->make('templates.status', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

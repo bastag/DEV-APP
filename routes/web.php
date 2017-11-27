@@ -13,17 +13,13 @@
 
 /* For all users */
 Route::get('/', 'DashboardController@index');
-
 Route::get('/profile', 'UsersController@index');
 
 
 /* For all customers */
 Route::get('/create-order', 'OrdersController@create');
-
 Route::get('/confirm-quotation', 'QuotationsController@index');
-
 Route::get('/invoice-list', 'InvoicesController@index');
-
 Route::get('/view-invoice', 'InvoicesController@show');
 
 Route::get('/order-history', function () {
