@@ -29,10 +29,10 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <span class="caret"></span>
                                 </a>
-                                <ul class="dropdown-menu" role = 'menu'>
-                                    <li><a href = 'profile'> Profile </a> </li>
+
+                                <ul class="dropdown-menu">
                                     <li>
-                                      <a href="{{ route('logout') }}"
+                                        <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout

@@ -30,27 +30,26 @@
                                                                              <th>Status</th>
 																		 </tr>
 																	 </thead>
+																	 @if($count=count($invoices)>1)
+	 																	@foreach($invoices as $invoice)
 																	 <tbody>
                                                                         <tr onclick="window.location='view-invoice';">
-																			 <td>1</td>
-                                                                             <td>{{\Carbon\Carbon::now()}}</td>
-                                                                             <td>LCSC Flyers</td>
-                                                                             <td><a> Emman The Grate </a></td>
-                                                                             <td>PhP -- </td>
-                                                                             <td>{{\Carbon\Carbon::now()}}</td>
-                                                                             <td><a>In process</a></td>
+																			 																			 <td>{{$invoice->id}}</td>
+																																						 <td>{{$invoice->created_at}}</td>
+                                                                             <td>{{$invoice->order_id}}</td>
+                                                                             <td>{{$invoice->quotation_id}}</td>
+                                                                             <td>{{$invoice->amount_paid}}</td>
+                                                                             <td>{{$invoice->updated_at}}</td>
+                                                                             <td><a>{{$invoice->order_status}}</a></td>
 																		 </tr>
-                                                                         <tr onclick="window.location='view-invoice';">
-																			 <td>2</td>
-                                                                             <td>{{\Carbon\Carbon::now()}}</td>
-                                                                             <td>LCSC Flyers</td>
-                                                                             <td><a>Chacha Lucero</a></td>
-                                                                             <td>PhP -- </td>
-                                                                             <td>{{\Carbon\Carbon::now()}} </td>
-                                                                             <td><a>Ready For Delivery</a></td>
-																		 </tr>
+																		 @endforeach
+																	 @else
+																	 <tr>
+																			 <td><h1>No Orders</h1></td>
+																	 </tr>
 
 																	 </tbody>
+																	 @endif
 																 </table>
 
 																 <div class="col-sm-12 ">

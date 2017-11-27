@@ -13,10 +13,6 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-    <!-- Ready-made -->
-    <script src = "{{ asset('js/app.js') }}"></script>
-    <script src = "{{ asset('js/bootstrap.js') }}"></script>
-
 
     <!-- Bootstrap core CSS     -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -75,7 +71,7 @@
                 timer: 4000
             });
 			@endif
-
+			
 			// Quantity buttons
 						$(".incr-btn").on("click", function (e) {
 						    var $button = $(this);

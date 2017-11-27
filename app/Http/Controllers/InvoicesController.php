@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Invoice;
+use App\Invoices;
 use Illuminate\Http\Request;
 
 class InvoicesController extends Controller
 {
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +14,8 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        return view('invoice-list');
+        $invoices = Invoices::all();
+        return view('invoice-list')->with('invoices', $invoices);
     }
 
     /**
