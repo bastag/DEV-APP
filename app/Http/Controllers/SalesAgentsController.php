@@ -11,10 +11,6 @@ class SalesAgents extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
-     {
-       $this ->middleware('auth',['except'=> ['create-order','confirm-quotation','view-invoice','order-history']]);
-     }
     public function index()
     {
         //

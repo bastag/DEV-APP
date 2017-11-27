@@ -14,10 +14,6 @@ class Quotations extends Model
         return $this->hasMany('Apps\PaperTypes');
     }
 
-    public function layouts(){
-        return $this->hasMany('Apps\Layouts');
-    }
-
   public function offset(){
         return $this->hasMany('Apps\OffsetTypes');
     }

@@ -21,7 +21,7 @@ class QuotationsController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -54,9 +54,6 @@ class QuotationsController extends Controller
         // Create Quote
         $paper->price = $request->input('cover_stock_price');
         $paper->price = $request->input('inside_stock_price');
-        $layout->price = $request->input('layout_price');
-        $layout->price = $request->input('colsep_price');
-        $layout->price = $request->input('digineg_price');
         $offset->price = $request->input('cover_offset_price');
         $offset->price = $request->input('inside_offset_price');
         $offset->price = $request->input('other_offset_price');
@@ -64,10 +61,8 @@ class QuotationsController extends Controller
         $lamination->price = $request->input('letterpress_price');
         $binding->price = $request->input('binding_price');
         $diecut->price = $request->input('diecut_price');
-        $quotation->amountquoted = $request->input('other_price');
-        
+
         $paper->save();
-        $layout->save();
         $offset->save();
         $lamination->save();
         $binding->save();
@@ -90,7 +85,7 @@ class QuotationsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     222*
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

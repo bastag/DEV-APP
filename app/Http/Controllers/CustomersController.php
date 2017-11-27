@@ -11,12 +11,6 @@ class Customers extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-     public function __construct()
-     {
-       $this ->middleware('auth',['except'=> ['manage-order','update-invoice','orderDetails.html']]);
-     }
-
     public function index()
     {
         //
