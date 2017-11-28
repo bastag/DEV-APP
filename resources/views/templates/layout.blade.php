@@ -75,7 +75,7 @@
                 timer: 4000
             });
 			@endif
-
+			
 			// Quantity buttons
 						$(".incr-btn").on("click", function (e) {
 						    var $button = $(this);
