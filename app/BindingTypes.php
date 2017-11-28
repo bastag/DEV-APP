@@ -13,4 +13,6 @@ class BindingTypes extends Model
     public function orders(){
         return $this->belongsTo('Apps\Orders');
     }
+
+
 }

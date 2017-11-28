@@ -44,4 +44,17 @@ class Orders extends Model
 
     public function jobtype(){
         return $this->hasMany('Apps\JobTypes');    }
+
+    public function createNewOrder(...) {
+        //checking
+        //save to db
+
+
+    }
+
+    public function manageOrder(...){
+      //Submit to quotation
+
+
+    }
 }

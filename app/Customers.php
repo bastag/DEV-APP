@@ -13,4 +13,9 @@ class Customers extends Model
   public function orders(){
     return $this->hasMany('Apps\Orders');
   }
+
+  public function storeInfo(){
+
+    //create order (from Model)
+  }
 }
