@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Orders;
-use App\User;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -16,9 +15,12 @@ class OrdersController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
       $orders = Orders::all();
 
+=======
+>>>>>>> ef7af55b85a191df7bb7a4971bd86820bf56cee0
       $orders = Orders  ::all();
       return view('order-lists')->with('orders', $orders);
     }
@@ -30,12 +32,18 @@ class OrdersController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
 
       return view('create-order');
 
        $user_id = auth()->user('id');
        $user = User::find($user_id);
         return view('create-order')->with('orders', $orders);
+=======
+      // $user_id = auth()->user('id');
+      // $user = User::find($user_id);
+        return view('create-order');
+>>>>>>> ef7af55b85a191df7bb7a4971bd86820bf56cee0
     }
 
     /**
@@ -47,6 +55,7 @@ class OrdersController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**

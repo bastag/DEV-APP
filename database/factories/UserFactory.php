@@ -13,35 +13,16 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
-    static $password;
-
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
-});
-
-
-$factory->define(App\Orders::class, function (Faker $faker) {
-    static $password;
-
-    return [
-        'id' => $faker->ean8,
-        'customer_id' => function(){
-          return factory(App\User::class)->create()->id;
-        },
-        'sales_agent_id' => $faker->ean8,
-        'quantity' => $faker->ean8,
-        'size_type_id' => $faker->ean8,
-        'page_count' => $faker->ean8,
-        'binding_type_id' => $faker->ean8,
-        'paper_type_id' => $faker->ean8
-    ];
-});
-
+// $factory->define(App\User::class, function (Faker $faker) {
+//     static $password;
+//
+//     return [
+//         'name' => $faker->name,
+//         'email' => $faker->unique()->safeEmail,
+//         'password' => $password ?: $password = bcrypt('secret'),
+//         'remember_token' => str_random(10),
+//     ];
+// });
 
 $factory->define(App\User::class, function (Faker $faker) {
     static $password;
@@ -56,17 +37,35 @@ $factory->define(App\User::class, function (Faker $faker) {
 });
 
 
+$factory->define(App\Orders::class, function (Faker $faker) {
+    static $password;
+
+    return [
+        'id' => $faker->ean8,
+        'customer_id' => function(){
+          return factory(App\User::class)->create()->id;
+        },
+        'sales_agent_id' => $faker->ean8,
+        'quantity' => $faker->randomDigitNotNull,
+        'size_type_id' => $faker->ean8,
+        'page_count' => $faker->randomDigitNotNull,
+        'binding_type_id' => $faker->ean8,
+        'paper_type_id' => $faker->ean8
+    ];
+});
+
+
 $factory->define(App\Quotations::class, function (Faker $faker) {
     static $password;
 
     return [
         'id' => $faker->ean8,
         'order_id' => $faker->ean8,
-        'amount_quoted' => $faker->ean8,
+        'amount_quoted' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
         'date_submitted' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'date_approved' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'date_rejected' => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'comments' => $faker->text,
+        'comments' => $faker->sentence,
         'paper_type_id' => $faker->ean8,
         'offset_type_id' => $faker->ean8,
         'lamination_type_id' => $faker->ean8,
@@ -82,8 +81,8 @@ $factory->define(App\Invoices::class, function (Faker $faker) {
         'id' => $faker->ean8,
         'order_id' => $faker->ean8,
         'quotation_id' => $faker->ean8,
-        'amount_paid' => $faker->ean8,
-        'order_status' => $faker->text,
+        'amount_paid' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
+        'order_status' => $faker->boolean,
         'payment_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
     ];
 });

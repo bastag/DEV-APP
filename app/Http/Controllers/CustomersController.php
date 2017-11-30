@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Customers;
-use App\User;
 use Illuminate\Http\Request;
 
 class CustomersController extends Controller
@@ -15,8 +14,22 @@ class CustomersController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
       $customers = Customers::all();
       return view('profile', compact('customers'));
+=======
+        
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+>>>>>>> ef7af55b85a191df7bb7a4971bd86820bf56cee0
     }
 
     /**
@@ -27,10 +40,14 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
       $users = new Users;
       $customer = new Customer;
 
       return $customer->storeCustomer(User $users, Request $request);
+=======
+        //
+>>>>>>> ef7af55b85a191df7bb7a4971bd86820bf56cee0
     }
 
     /**
