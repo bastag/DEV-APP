@@ -31,9 +31,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+<<<<<<< HEAD
                                   <li>
                                     <a href = 'profile'> Profile </a>
                                   </li>
+=======
+>>>>>>> f7b52ea6a629c5a550d5dfd693e86dea5306c9b5
                                     <li>
                                         <a href="<?php echo e(route('logout')); ?>"
                                             onclick="event.preventDefault();

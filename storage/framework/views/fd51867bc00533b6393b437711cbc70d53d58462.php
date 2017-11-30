@@ -1,6 +1,7 @@
 <title> Order Lists </title>
 	<?php $__env->startSection('mainPane'); ?>
         <!-- ORDER FORM -->
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -12,6 +13,8 @@
                             <!-- FORM CONTENT -->
 															<div class="container-fluid">
 
+
+
 																 <h1><i class="ti-receipt"></i> Pending Orders <small> (click on order for details)</small> </h1>
 
 																 <hr>
@@ -19,7 +22,7 @@
 																 <table class="table table-hover">
 																	 <thead>
 																		 <tr>
-																			 <th>Order #</th>
+																			 																			 <th>Order #</th>
                                                                              <th>Date</th>
 																																						 <th>Customer</th>
                                                                              <th>Job Title</th>
@@ -28,29 +31,30 @@
 
 																		 </tr>
 																	 </thead>
+																	 <?php if($count=count($orders)>1): ?>
+	 																	<?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 																	 <tbody>
-                                                                        <tr>
-																			 <td>1</td>
+                                    <tr>
+																			 																			 <td><?php echo e($order->id); ?></td>
                                                                              <td><?php echo e(\Carbon\Carbon::now()); ?></td>
-																																						 <td><a>Emman The Grate</a></td>
-                                                                             <td>LCSC Flyers</td>
+																																						 <td><?php echo e($order->customer_id); ?></td>
+                                                                             <td><?php echo e($order->size_type_id); ?></td>
 																																						 <td>
 																														 									<btn class = 'btn btn-warning'>Take Order</btn> </li>
 																														 								</td>
 
 																		 </tr>
-                                                                         <tr>
-																			 <td>2</td>
-                                                                             <td><?php echo e(\Carbon\Carbon::now()); ?></td>
-																																						 <td><a>Emman The Grate Pt.2</a></td>
-                                                                             <td>LCSC Flyers</td>
-                                                                             <td>
-																																							 <btn onclick="window.location='manage-order';" class = 'btn btn-success'>Manage</btn>
-																																						 </td>
-																		 </tr>
+																		 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+																		<?php else: ?>
+																		<tr>
+																				<td><h1>No Orders</h1></td>
+																		</tr>
 
 																	 </tbody>
+																	  <?php endif; ?>
 																 </table>
+
+
 
 																 <div class="col-sm-12 ">
 																		 <div class="result pull-left"><strong>Showing 1 to 2 of max</strong></div>

@@ -15,9 +15,10 @@ class CreateOrderJobTypesTable extends Migration
     {
         Schema::create('order_job_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('order_id');
+            $table->integer('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('job_type_id');
-            $table->string('remarks');
+            $table->mediumText('remarks');
             $table->timestamps();
         });
     }

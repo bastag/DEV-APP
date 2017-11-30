@@ -16,11 +16,10 @@ class OrdersController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
+
       $orders = Orders::all();
-=======
+
       $orders = Orders  ::all();
->>>>>>> f7b52ea6a629c5a550d5dfd693e86dea5306c9b5
       return view('order-lists')->with('orders', $orders);
     }
 
@@ -31,13 +30,12 @@ class OrdersController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
+
       return view('create-order');
-=======
-      // $user_id = auth()->user('id');
-      // $user = User::find($user_id);
+
+       $user_id = auth()->user('id');
+       $user = User::find($user_id);
         return view('create-order')->with('orders', $orders);
->>>>>>> f7b52ea6a629c5a550d5dfd693e86dea5306c9b5
     }
 
     /**

@@ -21,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password',
+        'first_name', 'last_name','user_type', 'email', 'password',
     ];
 
     /**
@@ -34,10 +34,21 @@ class User extends Authenticatable
     ];
 
     public function customers(){
-    return $this->hasOne('App\Customers');
+    return $this->hasOne('App\Customer');
     }
 
     public function agents(){
-    return $this->hasOne('App\SalesAgents');
+    return $this->hasOne('App\SalesAgent');
+
+      public function getCustomerID(){
+        $customer = $this::where('user_type','=','Customer')->get();
+        return $customer::pluck('id');
+      }
+
+      public function getAgentID(){
+        $agent = $this::where('user_type', '=', 'Sales Agent')->get();
+        return $agent::pluck('id');
+      }
+
     }
 }

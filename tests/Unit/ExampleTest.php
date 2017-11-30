@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase
@@ -12,10 +13,18 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    /*public function testBasicTest()
     {
-        Order::quotations();
+      $this->assertTrue(User::getCustomerID);
+    }*/
 
-        Quotations::store();
+    public function testUserDemography(){
+      $user = new \App\User;
+
+
+      $user::where('first_name', '=', "Emmanuel");
+      $this->assertEquals($user::all(), $user::where('first_name','=','Emmanuel'));
     }
 }
+
+?>
